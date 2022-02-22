@@ -13,7 +13,7 @@
 - https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8716716
 - https://repositorio.upct.es/xmlui/bitstream/handle/10317/7793/tfg-gar-des.pdf?sequence=1&isAllowed=y
 
-## DATABASE 📦
+## DATASET 📦
 ---
 Driver drowsiness 
 - [Photos](https://www.kaggle.com/dheerajperumandla/drowsiness-dataset)

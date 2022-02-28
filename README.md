@@ -4,7 +4,7 @@ The idea of the project is to be able to recognize the gestures of tiredness or 
 
 The objective is to recognize when the driver of a vehicle starts yawning or blinking frequently. 
 
-The Drowsy Driving Problem
+#### **The Drowsy Driving Problem**
 This usually happens when a driver has not slept enough, but it can also happen because of untreated sleep disorders, medications, drinking alcohol, or shift work
 - Makes you less able to pay attention to the road.
 - Slows reaction time if you must brake or steer suddenly.
@@ -14,6 +14,21 @@ This usually happens when a driver has not slept enough, but it can also happen 
 <p align="center">
   <img width="460" height="200" src="http://www.thedetroitbureau.com/wp-content/uploads/2013/01/Drowsy-Driving.jpg">
 </p>
+
+
+
+
+---
+# Steps
+
+<center>
+
+| 1 STEP  | 2 STEP | 3 STEP  | 4 STEP |
+|------|:-------------:|:------:|:------:|
+| Search Dataset  |Clear data   | Web Scraping   | Train ML  |
+
+</center>
+
 
 
 ## Related articles 📋

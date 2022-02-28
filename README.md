@@ -40,17 +40,17 @@ This usually happens when a driver has not slept enough, but it can also happen 
 
 ## DATASET 📦
 ---
-Driver drowsiness 
-- [Photos](https://www.kaggle.com/dheerajperumandla/drowsiness-dataset)
+- Driver drowsiness 
+  - [Photos](https://www.kaggle.com/dheerajperumandla/drowsiness-dataset)
 
-Driver drowsines 
-- [Videos](http://vlm1.uta.edu/~athitsos/projects/drowsiness/?C=M;O=A)
+- Driver drowsines 
+  - [Videos](http://vlm1.uta.edu/~athitsos/projects/drowsiness/?C=M;O=A)
 
-Cohn-kanade dataset 
-- [Emotion recognition](https://github.com/spenceryee/CS229/tree/master/CK%2B)
+- Cohn-kanade dataset 
+  - [Emotion recognition](https://github.com/spenceryee/CS229/tree/master/CK%2B)
 
-DrowsyDriverDetection
-- [Photos](https://github.com/nishagandhi/DrowsyDriverDetection/tree/master/data/testing/Alert)
+- DrowsyDriverDetection
+  - [Photos](https://github.com/nishagandhi/DrowsyDriverDetection/tree/master/data/testing/Alert)
 
 
 ## REQUERIMENTS 🛠️

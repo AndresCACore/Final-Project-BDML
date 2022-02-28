@@ -27,9 +27,9 @@ This usually happens when a driver has not slept enough, but it can also happen 
 
 <center>
 
-| 1 STEP  | 2 STEP | 3 STEP  | 4 STEP |
-|------|:-------------:|:------:|:------:|
-| Search Dataset  | Web Scraping | Clear data | Train ML  |
+| 1 STEP  | 2 STEP | 3 STEP  | 4 STEP | 5 STEP | 
+|------|:------:|:------:|:------:|:------:|
+| Search Dataset  | Web Scraping | Clear data | Create drowsiness dataset | Train ML  |
 
 </center>
 
@@ -38,6 +38,7 @@ graph TD;
     1-->3;
     2-->3;
     3-->4;
+    4-->5;
 ```
 
 ## Related articles 📋

@@ -1,12 +1,22 @@
 # Final-Project-BDML 🚀
-### Caja negra de coches (detección fatiga bostezo):shipit:
+### CAR BLACK BOX (FATIGUE DETECTION):shipit:
+The idea of the project is to be able to recognize the gestures of tiredness or drowsiness in people who may fall asleep in inappropriate situations or moments, for example while driving. 
+
+The objective is to recognize when the driver of a vehicle starts yawning or blinking frequently. 
+
+The Drowsy Driving Problem
+This usually happens when a driver has not slept enough, but it can also happen because of untreated sleep disorders, medications, drinking alcohol, or shift work
+- Makes you less able to pay attention to the road.
+- Slows reaction time if you must brake or steer suddenly.
+- Affects your ability to make good decisions.
+
 
 <p align="center">
   <img width="460" height="200" src="http://www.thedetroitbureau.com/wp-content/uploads/2013/01/Drowsy-Driving.jpg">
 </p>
 
 
-## Artículos relacionados 📋
+## Related articles 📋
 ---
 - https://arxiv.org/pdf/2112.10298.pdf
 - https://iopscience.iop.org/article/10.1088/1742-6596/1090/1/012037/pdf
@@ -28,7 +38,7 @@ DrowsyDriverDetection
 - [Photos](https://github.com/nishagandhi/DrowsyDriverDetection/tree/master/data/testing/Alert)
 
 
-## Requerimientos 🛠️
+## REQUERIMENTS 🛠️
 ---
 
 ## Autor ✒️

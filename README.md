@@ -1,5 +1,9 @@
 # Final-Project-BDML 🚀
-### CAR BLACK BOX (FATIGUE DETECTION):shipit:
+
+
+## CAR BLACK BOX (FATIGUE DETECTION) :eye_speech_bubble::zzz:
+
+
 The idea of the project is to be able to recognize the gestures of tiredness or drowsiness in people who may fall asleep in inappropriate situations or moments, for example while driving. 
 
 The objective is to recognize when the driver of a vehicle starts yawning or blinking frequently. 
@@ -19,17 +23,22 @@ This usually happens when a driver has not slept enough, but it can also happen 
 
 
 ---
-# Steps
+# Steps :white_check_mark:
 
 <center>
 
 | 1 STEP  | 2 STEP | 3 STEP  | 4 STEP |
 |------|:-------------:|:------:|:------:|
-| Search Dataset  |Clear data   | Web Scraping   | Train ML  |
+| Search Dataset  | Web Scraping | Clear data | Train ML  |
 
 </center>
 
-
+```mermaid
+graph TD;
+    1-->3;
+    2-->3;
+    3-->4;
+```
 
 ## Related articles 📋
 ---

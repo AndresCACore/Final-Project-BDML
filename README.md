@@ -65,8 +65,7 @@ graph TD;
 
 ---
 ## Code :construction:
-- You Only Look Once (YOLOV5)
-  - https://github.com/ultralytics/yolov5
+
 
 ## REQUERIMENTS 🛠️
 ---

@@ -64,7 +64,16 @@ graph TD;
   - [Photos](https://github.com/nishagandhi/DrowsyDriverDetection/tree/master/data/testing/Alert)
 
 ---
-## Code :construction:
+## Models :construction:
+<p align="center">
+  <img width="460" height="200" src="/Data/img/firts_model.png">
+</p>
+<p align="center">
+  <img width="460" height="200" src="/Data/img/firts_model_accuracy.png">
+</p>
+<p align="center">
+  <img width="460" height="200" src="/Data/img/firts_model_loss.png">
+</p>
 
 
 ## REQUERIMENTS 🛠️

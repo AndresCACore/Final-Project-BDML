@@ -65,6 +65,9 @@ graph TD;
 
 ---
 ## Models :construction:
+Firts model:
+- Loss: 0.0607
+- Accuracy: 0.9822 
 <p align="center">
   <img width="360" height="700" src="/Data/img/firts_model.png">
 </p>

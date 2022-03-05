@@ -65,7 +65,8 @@ graph TD;
 
 ---
 ## Models :construction:
-Firts model:
+- Supervised Learning Classification
+Model:
 - Loss: 0.0875
 - Accuracy: 0.96 
 <p align="center">

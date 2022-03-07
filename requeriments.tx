@@ -1,0 +1,5 @@
+face-recognition
+dlib==19.18.0
+numpy 
+PyQt5
+pyqt5-tools

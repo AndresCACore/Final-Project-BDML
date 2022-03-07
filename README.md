@@ -82,6 +82,9 @@ Model:
 
 ## REQUERIMENTS 🛠️
 ---
+- Tensorflow
+- Keras
+- OpenCV
 
 ## Autor ✒️
   - Andrés Carvajal

@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./dlib/python_examples"
+    ],
+    "jupyter.jupyterServerType": "local"
+}

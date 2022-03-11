@@ -2,6 +2,8 @@ import cv2
 from recorder import recorder
 import datetime
 
+# Enables facial recognition
+
 def face_recog(faces, auxFrame, frame, drowsy_recognizer, imagePaths):
     for (x,y,w,h) in faces:
         rostro = auxFrame[y:y+h,x:x+w]
@@ -13,7 +15,7 @@ def face_recog(faces, auxFrame, frame, drowsy_recognizer, imagePaths):
             cv2.putText(frame,'{}'.format(imagePaths[result[0]]),(x,y-25),2,1.1,(0,255,0),1,cv2.LINE_AA)
             cv2.rectangle(frame, (x,y),(x+w,y+h),(0,255,0),2)
             date_time_string = datetime.datetime.now().strftime("%y/%m/%d %H:%M:%S")
-            recorder(date_time_string, imagePaths[result[0]])
+            recorder(date_time_string, imagePaths[result[0]]) #Load records
         else:
             cv2.putText(frame,'Unknown',(x,y-20),2,0.8,(0,0,255),1,cv2.LINE_AA)
             cv2.rectangle(frame, (x,y),(x+w,y+h),(0,0,255),2)

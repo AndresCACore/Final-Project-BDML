@@ -1,8 +1,6 @@
 import cv2
-import os
-import numpy as np
 
-
+# Testing face recognition
 
 method = 'LBPH'
 

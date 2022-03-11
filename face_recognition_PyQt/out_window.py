@@ -39,7 +39,7 @@ class Ui_OutputDialog(QDialog):
 
     def CancelFeed(self):
         self.Worker1.stop()
-        #predict
+        
 
 class Worker1(QThread):
     ImageUpdate = pyqtSignal(QImage)
@@ -47,25 +47,23 @@ class Worker1(QThread):
         
         self.ThreadActive = True
 
-        drowsy_recognizer,imagePaths = predict()
+        drowsy_recognizer,imagePaths = predict() # Get model and labels
             
-        Capture = cv2.VideoCapture(0,cv2.CAP_DSHOW) #predict
-
-            #predict
+        Capture = cv2.VideoCapture(0,cv2.CAP_DSHOW) 
         faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalface_default.xml')
-            #predict
+      
 
         while self.ThreadActive: 
             ret, frame = Capture.read()
+            
             if ret:
                     
-                Image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) #gray
-
-                    #predict
+                Image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) 
                 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
                 auxFrame = gray.copy()
                 faces = faceClassif.detectMultiScale(gray,1.3,5)
-                face_recog(faces, auxFrame, frame, drowsy_recognizer, imagePaths)
+
+                face_recog(faces, auxFrame, frame, drowsy_recognizer, imagePaths) #facial recognition function
 
                 FlippedImage = frame
                 ConvertToQtFormat = QImage(FlippedImage, FlippedImage.shape[1], FlippedImage.shape[0], QImage.Format_RGB888)

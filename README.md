@@ -131,10 +131,11 @@ Model:
 </p>
 
 <p align="center">
-  <img width="460" height="200" src="img/pyqt.png">
+  <img width="330" height="100" src="img/pyqt.png">
 </p>
 
 
 ## Autor ✒️
   - Andrés Carvajal
+ <a href="https://www.linkedin.com/in/pablo-andr%C3%A9s-carvajal-andrade-a96897171/" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" alt="carlos salvador díaz" height="30" width="40" />linkedin</a>
 ---

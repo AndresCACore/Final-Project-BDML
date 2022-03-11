@@ -22,6 +22,26 @@ This usually happens when a driver has not slept enough, but it can also happen 
 
 
 
+---
+# What it's about?
+
+This project performs facial recognition to determine fatigue states, there are two types of states:
+- Drowsniess
+- Yawning
+
+There are also states of normal behavior, such as: 
+- Alert
+- Concentrated
+
+To implement the project it was necessary to create a database containing images of people in the four states mentioned above. To create this database it was necessary to use other databases, perform webscraping and introduce our own images.
+
+Next, it was necessary to clean the data (choose the most convenient ones) and then create our database of drowsy.
+
+It is necessary to train the neural network in order to obtain the parameters that allow the prediction of fatigue states.
+
+Last but not least the whole project must be incorporated on a graphical interface that allows the visualization to the user. 
+ 
+If you have any doubts, the following diagram will allow you to better observe the steps to follow. :arrow_heading_down:
 
 ---
 # Steps :white_check_mark:

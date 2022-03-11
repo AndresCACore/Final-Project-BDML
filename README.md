@@ -122,6 +122,8 @@ Model:
 ### Conclusions 
 - :white_check_mark: Facial recognition metrics improve the closer you are to the camera, and ambient lighting must also be taken into account. 
 
+- :white_check_mark: Records the date, time and event since the recording started, in .CSV file.
+
 - :x: Results vary when the user is wearing accessories (glasses or mask). 
 
 - :x: Results are not optimal for users with beards.

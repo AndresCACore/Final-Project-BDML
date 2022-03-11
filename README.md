@@ -116,30 +116,24 @@ Model:
 ## REQUERIMENTS 🛠️
 ---
 <p align="center">
-  <img width="460" height="200" src="img/tensorflow.png">
+  <img width="360" height="100" src="img/tensorflow.png">
 </p>
 
 <p align="center">
-  <img width="460" height="200" src="img/keras.png">
+  <img width="350" height="50" src="img/keras.png">
 </p>
 
 <p align="center">
   <img width="460" height="200" src="img/opencv.png">
 </p>
-
 <p align="center">
-  <img width="460" height="200" src="img/dlib.jpeg">
+  <img width="360" height="100" src="img/dlib.jpeg">
 </p>
 
 <p align="center">
-  <img width="460" height="200" src="img/pyqt.jpg">
+  <img width="460" height="200" src="img/pyqt.png">
 </p>
-- Keras
-- OpenCV
-- face-recognition
-- dlib==19.18.0
-- PyQt5
-- opencv
+
 
 ## Autor ✒️
   - Andrés Carvajal

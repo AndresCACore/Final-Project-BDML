@@ -72,6 +72,8 @@ graph TD;
 
 ## DATASET 📦
 ---
+These are the databases we use for reference, but if you want to see the database made for this project go to the `DATA` folder.
+
 - Driver drowsiness 
   - [Photos](https://www.kaggle.com/dheerajperumandla/drowsiness-dataset)
 

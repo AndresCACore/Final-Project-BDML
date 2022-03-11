@@ -88,7 +88,7 @@ Model:
  - Without glasses
 
 <p align="center">
-  <img width="360" height="300" src="img/neard.jpg">
+  <img width="460" height="300" src="img/neard.jpg">
 </p>
 
  - With glasses
@@ -115,7 +115,25 @@ Model:
 
 ## REQUERIMENTS 🛠️
 ---
-- Tensorflow
+<p align="center">
+  <img width="460" height="200" src="img/tensorflow.png">
+</p>
+
+<p align="center">
+  <img width="460" height="200" src="img/keras.png">
+</p>
+
+<p align="center">
+  <img width="460" height="200" src="img/opencv.png">
+</p>
+
+<p align="center">
+  <img width="460" height="200" src="img/dlib.jpeg">
+</p>
+
+<p align="center">
+  <img width="460" height="200" src="img/pyqt.jpg">
+</p>
 - Keras
 - OpenCV
 - face-recognition

@@ -103,19 +103,19 @@ Model:
  - If several errors occur in face recognition due to distance, the recognition efficiency decreases considerably. 
 
 <p align="center">
-  <img width="460" height="200" src="img/fail.jpg">
+  <img width="560" height="200" src="img/fail.jpg">
 </p>
 
 ### Save Results
-
+- It records all the events that occur in a csv file, where the status, date and time of the recording are saved in real time.
 <p align="center">
-  <img width="460" height="200" src="img/records.jpg">
+  <img width="300" height="400" src="img/records.jpg">
 </p>
 
 ### Interface
-
+- In the graphical interface, you can see the fatigue recognition in real time, as well as the date and time when the recording was started. 
 <p align="center">
-  <img width="460" height="200" src="img/results.jpg">
+  <img width="660" height="400" src="img/results.jpg">
 </p>
 
 

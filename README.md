@@ -97,7 +97,7 @@ Model:
   <img width="460" height="300" src="img/neard_glass.jpg">
 </p>
 
-### Negative Results :X:
+### Negative Results :x:
 - Results of fatigue recognition at long distance (approximately 85 cm from the camera).
 
  - :warning: If several errors occur in face recognition due to distance, the recognition efficiency decreases considerably. 
@@ -106,14 +106,14 @@ Model:
   <img width="560" height="200" src="img/fail.jpg">
 </p>
 
-### Save Results
-- It records all the events that occur in a csv file, where the status, date and time of the recording are saved in real time.
+### Save Results 
+- It records all the events that occur in a csv file, where the status, date and time of the recording are saved in real time. :floppy_disk:
 <p align="center">
   <img width="300" height="400" src="img/records.jpg">
 </p>
 
 ### Interface
-- In the graphical interface, you can see the fatigue recognition in real time, as well as the date and time when the recording was started. :desktop_computer: :chart_with_downwards_trend:
+- In the graphical interface, you can see the fatigue recognition in real time, as well as the date and time when the recording was started. :desktop_computer:
 <p align="center">
   <img width="660" height="400" src="img/results.jpg">
 </p>

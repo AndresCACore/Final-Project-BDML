@@ -6,6 +6,7 @@ import cv2
 import datetime
 from face_recog import face_recog
 import sys
+from predict import predict
 
 class Ui_OutputDialog(QDialog):
     def __init__(self):
@@ -18,23 +19,17 @@ class Ui_OutputDialog(QDialog):
         current_time = datetime.datetime.now().strftime("%I:%M %p")
         self.Date_Label.setText(current_date)
         self.Time_Label.setText(current_time)
-        #self.StatusLabel.setText("Danger")
-
         self.image = None
 
         #predict
 
         self.VBL = QVBoxLayout()
-
         self.FeedLabel = QLabel()
         self.VBL.addWidget(self.FeedLabel)
-
         self.CancelBTN = QPushButton("Cancel")
         self.CancelBTN.clicked.connect(self.CancelFeed)
         self.VBL.addWidget(self.CancelBTN)
-
         self.Worker1 = Worker1()
-
         self.Worker1.start()
         self.Worker1.ImageUpdate.connect(self.ImageUpdateSlot)
         self.setLayout(self.VBL)
@@ -52,14 +47,7 @@ class Worker1(QThread):
         
         self.ThreadActive = True
 
-        # predict
-        method = 'LBPH'
-        if method == 'LBPH': drowsy_recognizer = cv2.face.LBPHFaceRecognizer_create()
-        drowsy_recognizer.read('modelo'+method+'.xml')
-        imagePaths= ['alert', 'drowsy', 'no_yawn', 'yawn']
-        print('imagePaths=',imagePaths)
-            #predict
-
+        drowsy_recognizer,imagePaths = predict()
             
         Capture = cv2.VideoCapture(0,cv2.CAP_DSHOW) #predict
 

@@ -15,5 +15,5 @@ def face_recog(faces, auxFrame, frame, drowsy_recognizer, imagePaths):
             date_time_string = datetime.datetime.now().strftime("%y/%m/%d %H:%M:%S")
             recorder(date_time_string, imagePaths[result[0]])
         else:
-            cv2.putText(frame,'No identificado',(x,y-20),2,0.8,(0,0,255),1,cv2.LINE_AA)
+            cv2.putText(frame,'Unknown',(x,y-20),2,0.8,(0,0,255),1,cv2.LINE_AA)
             cv2.rectangle(frame, (x,y),(x+w,y+h),(0,0,255),2)

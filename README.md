@@ -30,7 +30,7 @@ This usually happens when a driver has not slept enough, but it can also happen 
 
 | 1 STEP  | 2 STEP | 3 STEP  | 4 STEP | 5 STEP | 6 STEP |
 |------|:------:|:------:|:------:|:------:|:------:|
-| Search Dataset  | Web Scraping | Clear data | Create drowsiness dataset | Train ML  | Interface |
+| Search Dataset  | Web Scraping | Clear data | Create drowsiness dataset | Train ML  | Interface PyQt 5 |
 
 </center>
 
@@ -82,18 +82,36 @@ Model:
 
 ## RESULTS
 ---
+### Positive Results
+- Results of fatigue recognition at close range (approximately 45 cm from the camera)
+
+ - Without glasses
 
 <p align="center">
   <img width="360" height="300" src="img/neard.jpg">
 </p>
 
+ - With glasses
+
 <p align="center">
   <img width="460" height="300" src="img/neard_glass.jpg">
 </p>
 
+### Negative Results
+- Results of fatigue recognition at long distance (approximately 85 cm from the camera).
+
+ - If several errors occur in face recognition due to distance, the recognition efficiency decreases considerably. 
+
 <p align="center">
   <img width="460" height="200" src="img/fail.jpg">
 </p>
+
+### Conclusions 
+- :white_check_mark: Facial recognition metrics improve the closer you are to the camera, and ambient lighting must also be taken into account. 
+
+- :x: Results vary when the user is wearing accessories (glasses or mask). 
+
+- :x: Results are not optimal for users with beards.
 
 ## REQUERIMENTS 🛠️
 ---

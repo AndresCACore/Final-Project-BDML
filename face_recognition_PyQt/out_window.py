@@ -1,22 +1,16 @@
-from PyQt5.QtGui import QImage, QPixmap
-from PyQt5.uic import loadUi
-from PyQt5.QtCore import pyqtSlot, QTimer, QDate, Qt
-from PyQt5.QtWidgets import QDialog,QMessageBox,QApplication, QDialog
+from PyQt5.QtGui import *
+from PyQt5.uic import *
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
 import cv2
-import face_recognition
-import numpy as np
 import datetime
-import os
+from recorder import recorder
 import sys
-
-
-
 
 class Ui_OutputDialog(QDialog):
     def __init__(self):
         super(Ui_OutputDialog, self).__init__()
-        loadUi("outputwindow.ui", self)
-
+        loadUi("./outputwindow.ui", self)
 
         #Update time
         now = QDate.currentDate()
@@ -24,118 +18,100 @@ class Ui_OutputDialog(QDialog):
         current_time = datetime.datetime.now().strftime("%I:%M %p")
         self.Date_Label.setText(current_date)
         self.Time_Label.setText(current_time)
+        #self.StatusLabel.setText("Danger")
 
         self.image = None
 
-    @pyqtSlot()
-    def startVideo(self, camera_name):
-        """
-        :param camera_name: link of camera or usb camera
-        :return:
-        """
-        if len(camera_name) == 0:
-            self.capture = cv2.VideoCapture(int(camera_name))
-        else:
-            self.capture = cv2.VideoCapture(camera_name)
-        self.timer = QTimer(self)  # Create Timer
-        path = 'ImagesAttendance'
-        if not os.path.exists(path):
-            os.mkdir(path)
-        # known face encoding and known face name list
-        images = []
-        self.class_names = []
-        self.encode_list = []
-        self.TimeList1 = []
-        self.TimeList2 = []
-        attendance_list = os.listdir(path)
+        #predict
 
-        # print(attendance_list)
-        for cl in attendance_list:
-            cur_img = cv2.imread(f'{path}/{cl}')
-            images.append(cur_img)
-            self.class_names.append(os.path.splitext(cl)[0])
-        for img in images:
-            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-            boxes = face_recognition.face_locations(img)
-            encodes_cur_frame = face_recognition.face_encodings(img, boxes)[0]
-            # encode = face_recognition.face_encodings(img)[0]
-            self.encode_list.append(encodes_cur_frame)
-        self.timer.timeout.connect(self.update_frame)  # Connect timeout to the output function
-        self.timer.start(10)  # emit the timeout() signal at x=40ms
+        self.VBL = QVBoxLayout()
 
-    def face_rec_(self, frame, encode_list_known, class_names):
-        """
-        :param frame: frame from camera
-        :param encode_list_known: known face encoding
-        :param class_names: known face names
-        :return:
-        """
-        # csv
+        self.FeedLabel = QLabel()
+        self.VBL.addWidget(self.FeedLabel)
 
-        def mark_attendance(name):
-            """
-            :param name: detected face known or unknown one
-            :return:
-            """
-            
+        self.CancelBTN = QPushButton("Cancel")
+        self.CancelBTN.clicked.connect(self.CancelFeed)
+        self.VBL.addWidget(self.CancelBTN)
 
-        # face recognition
-        faces_cur_frame = face_recognition.face_locations(frame)
-        encodes_cur_frame = face_recognition.face_encodings(frame, faces_cur_frame)
-        # count = 0
-        for encodeFace, faceLoc in zip(encodes_cur_frame, faces_cur_frame):
-            match = face_recognition.compare_faces(encode_list_known, encodeFace, tolerance=0.50)
-            face_dis = face_recognition.face_distance(encode_list_known, encodeFace)
-            name = "unknown"
-            best_match_index = np.argmin(face_dis)
-            # print("s",best_match_index)
-            if match[best_match_index]:
-                name = class_names[best_match_index].upper()
-                y1, x2, y2, x1 = faceLoc
-                cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
-                cv2.rectangle(frame, (x1, y2 - 20), (x2, y2), (0, 255, 0), cv2.FILLED)
-                cv2.putText(frame, name, (x1 + 6, y2 - 6), cv2.FONT_HERSHEY_COMPLEX, 0.5, (255, 255, 255), 1)
-            mark_attendance(name)
+        self.Worker1 = Worker1()
 
-        return frame
+        self.Worker1.start()
+        self.Worker1.ImageUpdate.connect(self.ImageUpdateSlot)
+        self.setLayout(self.VBL)
 
-    def showdialog(self):
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
+    def ImageUpdateSlot(self, Image):
+        self.FeedLabel.setPixmap(QPixmap.fromImage(Image))
 
-        msg.setText("This is a message box")
-        msg.setInformativeText("This is additional information")
-        msg.setWindowTitle("MessageBox demo")
-        msg.setDetailedText("The details are as follows:")
-        msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+    def CancelFeed(self):
+        self.Worker1.stop()
+        #predict
 
-
-
-
-    def update_frame(self):
-        ret, self.image = self.capture.read()
-        self.displayImage(self.image, self.encode_list, self.class_names, 1)
-
-    def displayImage(self, image, encode_list, class_names, window=1):
-
-        image = cv2.resize(image, (640, 480))
-        try:
-            image = self.face_rec_(image, encode_list, class_names)
-        except Exception as e:
-            print(e)
-        qformat = QImage.Format_Indexed8
-        if len(image.shape) == 3:
-            if image.shape[2] == 4:
-                qformat = QImage.Format_RGBA8888
-            else:
-                qformat = QImage.Format_RGB888
-        outImage = QImage(image, image.shape[1], image.shape[0], image.strides[0], qformat)
-        outImage = outImage.rgbSwapped()
+class Worker1(QThread):
+    ImageUpdate = pyqtSignal(QImage)
+    def run(self):
         
+        self.ThreadActive = True
 
-        if window == 1:
-            self.imgLabel.setPixmap(QPixmap.fromImage(outImage))
-            self.imgLabel.setScaledContents(True)
+        # predict
+        method = 'LBPH'
+        if method == 'LBPH': drowsy_recognizer = cv2.face.LBPHFaceRecognizer_create()
+        drowsy_recognizer.read('modelo'+method+'.xml')
+        imagePaths= ['alert', 'drowsy', 'no_yawn', 'yawn']
+        print('imagePaths=',imagePaths)
+            #predict
 
+            #Capture = cv2.VideoCapture(0) #original
+        Capture = cv2.VideoCapture(0,cv2.CAP_DSHOW) #predict
+
+            #precit
+        faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalface_default.xml')
+            #precit
+
+        while self.ThreadActive: 
+            ret, frame = Capture.read()
+            if ret:
+                    
+                Image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) #gray
+
+                    #predict
+                gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+                auxFrame = gray.copy()
+                faces = faceClassif.detectMultiScale(gray,1.3,5)
+
+                for (x,y,w,h) in faces:
+                    rostro = auxFrame[y:y+h,x:x+w]
+                    rostro = cv2.resize(rostro,(150,150),interpolation= cv2.INTER_CUBIC)
+                    result = drowsy_recognizer.predict(rostro)
+                    cv2.putText(frame,'{}'.format(result),(x,y-5),1,1.3,(255,255,0),1,cv2.LINE_AA)
+                     
+                    if result[1] < 70:
+                        cv2.putText(frame,'{}'.format(imagePaths[result[0]]),(x,y-25),2,1.1,(0,255,0),1,cv2.LINE_AA)
+                        cv2.rectangle(frame, (x,y),(x+w,y+h),(0,255,0),2)
+                        #self.StatusLabel.setText(imagePaths[result[0]])
+                        date_time_string = datetime.datetime.now().strftime("%y/%m/%d %H:%M:%S")
+                        recorder(date_time_string, imagePaths[result[0]])
+
+                    else:
+                        cv2.putText(frame,'No identificado',(x,y-20),2,0.8,(0,0,255),1,cv2.LINE_AA)
+                        cv2.rectangle(frame, (x,y),(x+w,y+h),(0,0,255),2)
+                    #predict
+
+                    #FlippedImage = cv2.flip(frame, 1)
+                FlippedImage = frame
+                ConvertToQtFormat = QImage(FlippedImage, FlippedImage.shape[1], FlippedImage.shape[0], QImage.Format_RGB888)
+                Pic = ConvertToQtFormat.scaled(640, 480, Qt.KeepAspectRatio)
+                Pic= Pic.rgbSwapped()
+                self.ImageUpdate.emit(Pic)
+
+    def stop(self):
+        self.ThreadActive = False
+        self.quit()
+        cv2.destroyAllWindows()
+
+if __name__ == "__main__":
+    App = QApplication(sys.argv)
+    Root = Ui_OutputDialog()
+    Root.show()
+    sys.exit(App.exec())
 
 

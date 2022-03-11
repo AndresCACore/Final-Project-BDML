@@ -2,3 +2,5 @@ borrador.py
 .git
 .vscode
 __pycache__
+modeloLBPH.xml
+mainwindow.ui

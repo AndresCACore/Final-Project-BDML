@@ -1,8 +1,8 @@
 import cv2
 import os
 import imutils
-
-personName = 'no_yawn'
+# To save the pictures about labels
+personName = 'drowsy'
 dataPath = 'Final-Project-BDML/drowsiness-dataset/train' 
 personPath = dataPath + '/' + personName
 
@@ -14,8 +14,7 @@ cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 
 
 faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalface_default.xml')
-count = 601
-
+count = 851
 while True:
 
 	ret, frame = cap.read()
@@ -35,7 +34,7 @@ while True:
 	cv2.imshow('frame',frame)
 
 	k =  cv2.waitKey(1)
-	if k == 27 or count >= 700:
+	if k == 27 or count >= 999:
 		break
 
 cap.release()

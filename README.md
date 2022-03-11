@@ -106,6 +106,19 @@ Model:
   <img width="460" height="200" src="img/fail.jpg">
 </p>
 
+### Save Results
+
+<p align="center">
+  <img width="460" height="200" src="img/records.jpg">
+</p>
+
+### Interface
+
+<p align="center">
+  <img width="460" height="200" src="img/results.jpg">
+</p>
+
+
 ### Conclusions 
 - :white_check_mark: Facial recognition metrics improve the closer you are to the camera, and ambient lighting must also be taken into account. 
 

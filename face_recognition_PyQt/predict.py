@@ -1,5 +1,5 @@
 import cv2
-import tensorflow as tf
+
 # Prepare the img
 IMG_SIZE = 145
 def prepare(filepath, face_cas="Data/assets/modeloLBPH.xmñ"):
@@ -16,12 +16,6 @@ def predict():
     imagePaths= ['alert', 'drowsy', 'no_yawn', 'yawn']
     print('imagePaths=',imagePaths)
     
-    #model = tf.keras.models.load_model("Final-Project-BDML/Data/weight/drowiness_train.h5")
-    #prediction = model.predict([prepare(frame)]) #frame
-    #pred = imagePaths[np.argmax(prediction)]
-    #print(pred)
-    
-
     return drowsy_recognizer,imagePaths
 
 

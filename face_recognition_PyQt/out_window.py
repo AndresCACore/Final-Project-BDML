@@ -8,6 +8,7 @@ from face_recog import face_recog
 import sys
 from predict import predict
 
+
 class Ui_OutputDialog(QDialog):
     def __init__(self):
         super(Ui_OutputDialog, self).__init__()
@@ -55,10 +56,8 @@ class Worker1(QThread):
 
         while self.ThreadActive: 
             ret, frame = Capture.read()
-            
-            if ret:
-                    
-                Image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) 
+
+            if ret:   
                 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
                 auxFrame = gray.copy()
                 faces = faceClassif.detectMultiScale(gray,1.3,5)

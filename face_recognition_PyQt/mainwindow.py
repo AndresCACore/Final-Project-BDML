@@ -8,7 +8,7 @@ class Ui_Dialog(QDialog):
         super(Ui_Dialog, self).__init__()
         self._new_window = Ui_OutputDialog()
         self._new_window.show()
-        #self._new_window.startVideo() # Choose the webcam
+        
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

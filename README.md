@@ -82,25 +82,25 @@ Model:
 
 ## RESULTS
 ---
-### Positive Results
+### Positive :white_check_mark:
 - Results of fatigue recognition at close range (approximately 45 cm from the camera)
 
- - Without glasses
+ - Without glasses :smiley:
 
 <p align="center">
   <img width="460" height="300" src="img/neard.jpg">
 </p>
 
- - With glasses
+ - With glasses :nerd_face:
 
 <p align="center">
   <img width="460" height="300" src="img/neard_glass.jpg">
 </p>
 
-### Negative Results
+### Negative Results :X:
 - Results of fatigue recognition at long distance (approximately 85 cm from the camera).
 
- - If several errors occur in face recognition due to distance, the recognition efficiency decreases considerably. 
+ - :warning: If several errors occur in face recognition due to distance, the recognition efficiency decreases considerably. 
 
 <p align="center">
   <img width="560" height="200" src="img/fail.jpg">
@@ -122,11 +122,11 @@ Model:
 ### Conclusions 
 - :white_check_mark: Facial recognition metrics improve the closer you are to the camera, and ambient lighting must also be taken into account. 
 
-- :white_check_mark: Records the date, time and event since the recording started, in .CSV file.
+- :white_check_mark: Records the date, time and event since the recording started, in .CSV file. :open_file_folder:
 
-- :x: Results vary when the user is wearing accessories (glasses or mask). 
+- :x: Results vary when the user is wearing accessories (glasses or mask). :sunglasses: :mask: 
 
-- :x: Results are not optimal for users with beards.
+- :x: Results are not optimal for users with beards. :bearded_person:
 
 ## REQUERIMENTS 🛠️
 ---

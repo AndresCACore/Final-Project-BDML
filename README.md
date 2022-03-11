@@ -113,14 +113,14 @@ Model:
 </p>
 
 ### Interface
-- In the graphical interface, you can see the fatigue recognition in real time, as well as the date and time when the recording was started. 
+- In the graphical interface, you can see the fatigue recognition in real time, as well as the date and time when the recording was started. :desktop_computer: :chart_with_downwards_trend:
 <p align="center">
   <img width="660" height="400" src="img/results.jpg">
 </p>
 
 
 ### Conclusions 
-- :white_check_mark: Facial recognition metrics improve the closer you are to the camera, and ambient lighting must also be taken into account. 
+- :white_check_mark: Facial recognition metrics improve the closer you are to the camera, and ambient lighting must also be taken into account. :sunny: :movie_camera:
 
 - :white_check_mark: Records the date, time and event since the recording started, in .CSV file. :open_file_folder:
 
